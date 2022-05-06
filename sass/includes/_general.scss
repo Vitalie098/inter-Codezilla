@@ -6,6 +6,15 @@ a, input, textarea, button {
 *::after {
   box-sizing: border-box;
 }
+
+.myContainer {
+  max-width: 940px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+
 /*
 // use this container when bootstrap is not imported
 .container {

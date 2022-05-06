@@ -64,6 +64,7 @@ const uglifyJs = (done) => {
 }
 
 gulp.task('watch', () => {
+    gulp.watch('./index.html', compileSass);
     gulp.watch('sass/**/*.scss', compileSass);
     gulp.watch('js/*.js', uglifyJs);
 });
