@@ -1,0 +1,29 @@
+.blogs {
+
+    .containerImg {
+        margin-bottom: 16px;
+    }
+
+    h3 {
+        font-family: 'Galien';
+        font-size: 28px;
+        line-height: 38px;
+        color: $blue01;
+        letter-spacing: 0.04em;
+    }
+
+    p {
+        font-family: 'Gilroy';
+        line-height: 26px;
+        color: #000;
+        opacity: .6;
+        letter-spacing: 0.04em;
+    }
+
+    .blog-footer_img img:first-child {
+        margin-right: 38px;
+    }
+
+    
+   
+}

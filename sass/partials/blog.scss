@@ -30,23 +30,25 @@
         
     }
 
-    .author, .date {
-        font-size: 14px;
-        line-height: 24px;
-        font-family: 'Gilroy';
-        color: $blue01;
-        letter-spacing: 0.04em;
-        margin-bottom: 0;
-    }
-
-    .date {
-        opacity: .4;
-        margin-top: 4px;
-    }
-
     & img:first-child {
         margin-right: 38px;
     }
 
     
 }
+
+.author,
+.date {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: 'Gilroy';
+    color: $blue01;
+    letter-spacing: 0.04em;
+    margin-bottom: 0;
+}
+
+.date {
+    opacity: .4;
+    margin-top: 4px;
+}
+
