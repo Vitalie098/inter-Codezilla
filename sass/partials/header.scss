@@ -1,3 +1,13 @@
 header.website-header {
+    .header_inner {
+        padding: 50px 0;
+        display: flex;
+        justify-content: space-between;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
     
 }
