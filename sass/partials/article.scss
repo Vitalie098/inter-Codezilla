@@ -1,0 +1,46 @@
+.article {
+
+    .idc-article-width {
+        max-width: 320px;
+        width: 100%;
+        padding-right: 5px;
+
+    }
+    .idc-article {
+        font-family: 'Gilroy';
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 25px;
+        letter-spacing: 0.04em;
+        color: $blue03;
+        opacity: 0.8;
+        margin-bottom: 32px;
+    }
+
+    h2 {
+        font-family: 'Galien';
+        font-size: 28px;
+        line-height: 38px;
+        letter-spacing: 0.04em;
+        color: $blue01;
+        margin-bottom: 16px;
+    }
+
+    p {
+        font-family: 'Gilroy';
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0.04em;
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    .idc-article-icons {
+        & img:first-child {
+                margin-right: 38px;
+            }
+    }
+
+    .idc-article-margin {
+        margin-bottom: 32px;
+    }
+}
