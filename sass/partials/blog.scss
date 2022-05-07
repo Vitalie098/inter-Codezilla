@@ -1,0 +1,52 @@
+.blog {
+    margin-bottom: 33px;
+
+    h3 {
+        font-family: 'Gilroy';
+        font-size: 20px;
+        line-height: 25px;
+        font-weight: 600;
+        color: $blue03;
+        margin-bottom: 32px;
+        letter-spacing: 0.04em;
+    }
+
+    h2 {
+        font-size: 48px;
+        font-weight: bold;
+        font-family: 'Galien';
+        line-height: 58px;
+        color: $blue01;
+        letter-spacing: 0.04em;
+        margin-bottom: 32px;
+    }
+
+    .blog_description {
+        font-family: 'Gilroy';
+        line-height: 24px;
+        letter-spacing: 0.04em;
+        color: #000;
+        opacity: .6;
+        
+    }
+
+    .author, .date {
+        font-size: 14px;
+        line-height: 24px;
+        font-family: 'Gilroy';
+        color: $blue01;
+        letter-spacing: 0.04em;
+        margin-bottom: 0;
+    }
+
+    .date {
+        opacity: .4;
+        margin-top: 4px;
+    }
+
+    & img:first-child {
+        margin-right: 38px;
+    }
+
+    
+}
