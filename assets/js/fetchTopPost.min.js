@@ -8,7 +8,6 @@ function getTopPosts(value) {
    fetch(`https://pixabay.com/api/?key=${key}&q=${value}&image_type=photo&per_page=4`)
     .then(res => res.json())
     .then( data => { 
-
         if(data.hits.length !== 0) {
             topPosts[value] = [...data.hits]
             contentPage.innerHTML += createTemplateForTopPost(data.hits)
@@ -16,8 +15,7 @@ function getTopPosts(value) {
         } else {
              contentPage.innerHTML += "<div class='container'<h1>Nu avem postari de genul</h1></div>"
         }
-        
-    } )
+    })
 
     return true
 }

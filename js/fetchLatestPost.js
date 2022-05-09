@@ -21,8 +21,6 @@ function getNewLatestPosts() {
     let startIndex = latestPosts[keyword].length
     let calc = countPage * 5 - 5
 
-    console.log(calc)
-
     if(latestPosts[keyword].length > calc) {
         $latestPosts.innerHTML = createTemplatesForLatestPosts(latestPosts[keyword].slice(calc, calc + 5), false, calc)
         return

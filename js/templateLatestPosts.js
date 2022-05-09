@@ -1,4 +1,3 @@
-// cream template pentru latestPost
 function createTemplatesForLatestPosts(data, isFirst = true, index = 0) {
     let template = []
 

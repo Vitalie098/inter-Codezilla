@@ -1,4 +1,3 @@
-// creeam template-ul pentru postarile top
 function createTemplateForTopPost(hits) {
     return `
      <section class="blog">
@@ -66,7 +65,6 @@ function createSmallTemplatesPost(data, className, index = 0, startWith) {
     return templatePosts.join("")
 }
 
-//creeam template pentru postari
 function createSmallTemplatePost(data, className, index) {
     return `
     <div class="${className} col-sm-12 mb-3" id="pageC">

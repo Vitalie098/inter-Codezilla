@@ -1,5 +1,4 @@
 function createModalTemplate(index, isTop, data) {
-    console.log(topPosts[keyword])
     let post = data ? data : findPost(index, isTop)
     modal.innerHTML = getModalTemplate(index,post, isTop)
     modal.style.display = "flex"
