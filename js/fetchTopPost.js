@@ -1,6 +1,7 @@
 function getTopPosts(value) {
     if(topPosts[value]) {
         contentPage.innerHTML += createTemplateForTopPost(topPosts[value].slice(0,4))
+         getLatestPost(value)
         return
     }
 
@@ -21,9 +22,9 @@ function getTopPosts(value) {
     return true
 }
 
-
 function getAnotherTopPosts() {
     const element = document.querySelector("#viewPosts")
+    let startIndex = null
 
     if(topPosts[keyword].length < 4) {
         element.innerHTML = `
@@ -35,9 +36,11 @@ function getAnotherTopPosts() {
     }
 
     if(topPosts[keyword].length > 4) {
+        let data = topPosts[keyword].slice(4,topPosts[keyword].length)
+
         element.innerHTML = `
             <div class="row">
-                ${createSmallTemplatesPost(topPosts[keyword].slice(4,topPosts[keyword].length), "col-md-3")}
+                ${createSmallTemplatesPost(data, "col-md-3", data.length, 0)}
             </div>
         `
         return
@@ -46,11 +49,12 @@ function getAnotherTopPosts() {
     fetch(`https://pixabay.com/api/?key=${key}&q=${keyword}&image_type=photo&page=2&per_page=17`)
         .then(res => res.json())
         .then( data => {
+            startIndex = topPosts[keyword].length
             topPosts[keyword] = [...topPosts[keyword], ...data.hits]
 
             element.innerHTML = `
                 <div class="row">
-                ${createSmallTemplatesPost(data.hits, "col-md-3")}
+                ${createSmallTemplatesPost(data.hits, "col-md-3", startIndex, 0)}
                 </div>
             `
         }) 

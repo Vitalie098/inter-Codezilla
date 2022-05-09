@@ -6,44 +6,39 @@ function searchPosts(event) {
         getTopPosts(event.target.value)
         keyword = event.target.value
         event.target.value = ""
+        console.log(topPosts)
     }
 }
 
 function getPreviousPosts() {
     if(countPage === 1) return
     let oldPosts = latestPosts[keyword].slice(countPage * 5 - 10, countPage * 5 - 5)
-    $latestPosts.innerHTML = createTemplatesForLatestPosts(oldPosts, false)
+    $latestPosts.innerHTML = createTemplatesForLatestPosts(oldPosts, false, countPage * 5 - 10 )
     countPage--
 }
 
-function saveOrDeletePost(id, isTop = false,e) {
-    let candidatePost = favouritePosts.find(p => p.id === id)
-
+function saveOrDeletePost(index, id, isTop = false) {
+    
+   let candidatePost = favouritePosts.find(p => p.id === id)
+   
     candidatePost 
     ? favouritePosts = favouritePosts.filter(p => p.id !== id) 
-    : favouritePosts.push(findPost(id, isTop))
+    : favouritePosts.push(findPost(index, isTop))
 
     if(candidatePost && favouritePageIsOpen) createTemplatesFavouritePosts()
     localStorage.setItem("favouritePosts", JSON.stringify(favouritePosts))
+    
 }
 
-
-function findPost(id, isTop) {
-    let post = null
-
-    for(let key in isTop ? topPosts : latestPosts) {
-        post = isTop ? topPosts[key].find(p => p.id === id) : latestPosts[key].find(p => p.id === id)
-        if(post) break
-    }
-
-    return post
+function findPost(index, isTop) {
+    return isTop ? topPosts[keyword][index] : latestPosts[keyword][index]
 }
 
-function changeSlider(id, n, isTop) {
-    let index = isTop ? getIndex(topPosts[keyword], id, n) : getIndex(latestPosts[keyword], id, n)
-    let data = isTop ? topPosts[keyword][index] : latestPosts[keyword][index]
-
-    createModalTemplate(id, isTop, data )
+function changeSlider(index, n, isTop) {
+   let category = isTop ? topPosts[keyword] : latestPosts[keyword]
+   let postLength = category.length
+   index = n === -1 ? index <= 0 ? postLength - 1 : index + n : index >= postLength - 1 ? 0 : index + n
+   createModalTemplate(index, isTop, findPost(index, isTop) )
 }
 
 function getIndex(category, id, n) {

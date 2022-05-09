@@ -1,10 +1,11 @@
-function createModalTemplate(id, isTop, data) {
-    let post = data ? data : findPost(id, isTop)
-    modal.innerHTML = getModalTemplate(post, isTop)
+function createModalTemplate(index, isTop, data) {
+    console.log(topPosts[keyword])
+    let post = data ? data : findPost(index, isTop)
+    modal.innerHTML = getModalTemplate(index,post, isTop)
     modal.style.display = "flex"
 }
 
-function getModalTemplate(post, isTop) {
+function getModalTemplate(index,post, isTop) {
     return `
         <div class="modal-content">
             <span class="close cursor" onclick="closeModal()">&times;</span>
@@ -35,7 +36,7 @@ function getModalTemplate(post, isTop) {
             </div>
         </div>
 
-        <a class="prev" onclick="changeSlider(${post.id}, -1, ${isTop})">&#10094;</a>
-        <a class="next" onclick="changeSlider(${post.id}, 1, ${isTop})">&#10095;</a>
+        <a class="prev" onclick="changeSlider(${index}, -1, ${isTop})">&#10094;</a>
+        <a class="next" onclick="changeSlider(${index}, 1, ${isTop})">&#10095;</a>
     `
 }

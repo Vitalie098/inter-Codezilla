@@ -1,8 +1,8 @@
 // cream template pentru latestPost
-function createTemplatesForLatestPosts(data, isFirst = true) {
+function createTemplatesForLatestPosts(data, isFirst = true, index = 0) {
     let template = []
 
-    for(let i = 0; i < data.length; i++) template.push(createtemplateForLatestPost(data[i]))
+    for(let i = 0; i < data.length; i++) template.push(createtemplateForLatestPost(index + i, data[i]))
     return isFirst ? createTemplateForFirstRender(template) : template.join("")
 }
 
@@ -36,11 +36,11 @@ function createTemplateForFirstRender(template) {
     `
 }
 
-function createtemplateForLatestPost(data) {
+function createtemplateForLatestPost(index,data) {
     return `
     <div class="row idc-article-margin">
         <div class="col-md-4 col-sm-12 idc-article-width d-flex align-items-center mb-2">
-            <img src="${data.webformatURL}" class="img-fluid" onclick="createModalTemplate(${data.id}, false)" />
+            <img src="${data.webformatURL}" class="img-fluid" onclick="createModalTemplate(${index}, false)" />
         </div>
         <div class="col-md-8 col-sm-12">
             
@@ -54,7 +54,7 @@ function createtemplateForLatestPost(data) {
                 </div>
             
                 <div class="col-sm-6 idc-article-icons">
-                    <img src="./assets/img/Vector.png" class="cursor" onclick="saveOrDeletePost(${data.id})" />
+                    <img src="./assets/img/Vector.png" class="cursor" onclick="saveOrDeletePost(${index}, ${data.id})" />
                     <img src="./assets/img/Vector-4.png" />
                 </div>
             

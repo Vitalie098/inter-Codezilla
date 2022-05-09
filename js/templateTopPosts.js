@@ -22,7 +22,7 @@ function createTemplateForTopPost(hits) {
                         </div>
 
                         <div class="col-sm-6 mb-3">
-                            <img src="./assets/img/Vector.png" class="cursor" onclick="saveOrDeletePost(${hits[0].id},true)"/>
+                            <img src="./assets/img/Vector.png" class="cursor" onclick="saveOrDeletePost(0, ${hits[0].id}, true)"/>
                             <img src="./assets/img/Vector-4.png" />
                         </div>
 
@@ -30,11 +30,11 @@ function createTemplateForTopPost(hits) {
                 </div>
 
                 <div class="col-md-7 col-sm-12 d-flex align-items-center">
-                    <img src="${hits[0].webformatURL}" class="img-fluid" onclick="createModalTemplate(${hits[0].id}, true)"/>
+                    <img src="${hits[0].webformatURL}" class="img-fluid" onclick="createModalTemplate(0, true)"/>
                 </div>
             </div>
             <div class="row">
-            ${createSmallTemplatesPost(hits, "col-md-4")}
+            ${createSmallTemplatesPost(hits, "col-md-4",0,1)}
             </div>
 
              <div class="row mt-5 mb-4" id="viewPosts">
@@ -52,26 +52,26 @@ function createTemplateForTopPost(hits) {
         `
 }
 
-function createSmallTemplatesPost(data, className) {
+function createSmallTemplatesPost(data, className, index = 0, startWith) {
     let templatePosts = []
 
-    for(let i = 1; i < data.length; i++) {
+    for(let i = startWith; i < data.length; i++) {
         if(i > 4) {
-            templatePosts.push(createSmallTemplatePost(data[i], "col-md-2"))
+            templatePosts.push(createSmallTemplatePost(data[i], "col-md-2", index + i))
             continue
         }
-        templatePosts.push(createSmallTemplatePost(data[i], className))
+        templatePosts.push(createSmallTemplatePost(data[i], className, index + i))
     }
 
     return templatePosts.join("")
 }
 
 //creeam template pentru postari
-function createSmallTemplatePost(data, className) {
+function createSmallTemplatePost(data, className, index) {
     return `
     <div class="${className} col-sm-12 mb-3" id="pageC">
         <div class="containerImg">
-            <img src="${data.webformatURL}" class="img-fluid" onclick="createModalTemplate(${data.id}, true)"/>
+            <img src="${data.webformatURL}" class="img-fluid" onclick="createModalTemplate(${index}, true)"/>
         </div>
 
         <h3>${data.views}</h3>
@@ -85,7 +85,7 @@ function createSmallTemplatePost(data, className) {
             </div>
 
             <div class="col-sm-4 blog-footer_img">
-                <img src="./assets/img/Vector.png" class="cursor" onclick="saveOrDeletePost(${data.id},true)" />
+                <img src="./assets/img/Vector.png" class="cursor" onclick="saveOrDeletePost(${index}, ${data.id}, true)" />
                 <img src="./assets/img/Vector-4.png" />
             </div>
 
