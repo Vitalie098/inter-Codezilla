@@ -36,7 +36,7 @@ gulp.task('scripts', () => {
                 extname: ".js"
             };
         }))
-        .pipe(uglify())
+       // .pipe(uglify())
         .pipe(gulp.dest("./assets/js"))
         .pipe(browsersync.stream())
 });

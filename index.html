@@ -22,7 +22,7 @@
                 </div>
                     
                 <div class="containerBurgerMenu">
-                    <img src="./assets//img/Vector-3.png" alt="vector">
+                    <img src="./assets//img/Vector.png" alt="vector" class="cursor" onclick="createTemplatesFavouritePosts()">
                 </div>
                
             </div>
@@ -46,293 +46,29 @@
         <div class="myContainer">
             <div class="search-box">
                 <i class="fa fa-search"></i>
-                <input type="text" placeholder="Search Article">
+                <input type="text" placeholder="Search Article" id="search" onkeyup="searchPosts(event)">
             </div>
         </div>
     </div>
 
-    <section class="blog">
-        <div class="myContainer">
-            <div class="row">
-                <div class="col-12">
-                    <h3 class="text-uppercase">popular</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5 col-sm-12">
-                    <h2>Feugiat sodales at nullam tellus.</h2>
-                    <p class="blog_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                       labore et dolore magna aliqua. Mi posuere nibh tempor fringilla porta pellentesque ipsum.
-                    </p>
+    <div id="content"></div>
+    <div class="modal-overlay" id="modal-overlay"> 
+    </div>
 
-                    <div class="row justify-content-between align-items-center">
-                        
-                        <div class="col-sm-6 mb-3">
-                            <p class="author">Samatha Leuthex</p>
-                            <p class="date">May 5, 3 min read</p>
+    
 
-                        </div>
-
-                        <div class="col-sm-6 mb-3">
-                            <img src="./assets/img/Vector.png" />
-                            <img src="./assets/img/Vector-4.png" />
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-md-7 col-sm-12 d-flex align-items-center">
-                    <img src="./assets/img/Rectangle 5.png" class="img-fluid"/>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <section class="blogs">
-        <div class="myContainer">
-            <div class="row">
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="containerImg">
-                        <img src="./assets/img/Rectangle 5-2.png" class="img-fluid" />
-                    </div>
-                    <h3>Amet amet sed pharetra risus sit eget interdum.</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                        labore et dolore magnaaliqua.
-                    </p>
-
-                    <div class="row justify-content-between align-items-center">
-                        <div class="col-sm-8 mb-2">
-                            <p class="author">Samatha Leuthex</p>
-                            <p class="date">May 5, 3 min read</p>
-                        </div>
-                    
-                        <div class="col-sm-4 blog-footer_img">
-                            <img src="./assets/img/Vector.png" />
-                            <img src="./assets/img/Vector-4.png" />
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="containerImg">
-                        <img src="./assets/img/Rectangle 5-3.png" class="img-fluid" />
-                    </div>
-                    <h3>Amet amet sed pharetra risus sit eget interdum.</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magnaaliqua.
-                    </p>
-                
-                    <div class="row justify-content-between align-items-center">
-                        <div class="col-sm-8 mb-2">
-                            <p class="author">Samatha Leuthex</p>
-                            <p class="date">May 5, 3 min read</p>
-                        </div>
-                
-                        <div class="col-sm-4 blog-footer_img">
-                            <img src="./assets/img/Vector.png" />
-                            <img src="./assets/img/Vector-4.png" />
-                        </div>
-                    </div>
-                
-                </div>
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="containerImg">
-                        <img src="./assets/img/Rectangle 5-4.png" class="img-fluid" />
-                    </div>
-                    <h3>Amet amet sed pharetra risus sit eget interdum.</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magnaaliqua.
-                    </p>
-                
-                    <div class="row justify-content-between align-items-center">
-                        <div class="col-sm-8 mb-2">
-                            <p class="author">Samatha Leuthex</p>
-                            <p class="date">May 5, 3 min read</p>
-                        </div>
-                
-                        <div class="col-sm-4 blog-footer_img ">
-                            <img src="./assets/img/Vector.png" />
-                            <img src="./assets/img/Vector-4.png" />
-                        </div>
-                    </div>
-                
-                </div>
-            </div>
-            <div class="row mt-5 mb-4">
-                <div class="col-12 d-flex justify-content-end">
-                    <h5>See All Popular Article</h5>
-                </div>
-            </div>
-            <hr>
-        </div>
-    </section>
-
-    <section class="article">
-        <div class="myContainer">
-            <div class="row">
-                <div class="col-12">
-                    <h3 class="text-uppercase idc-article">All article</h3>
-                </div>
-            </div>
-            <div class="row idc-article-margin">
-                <div class="col-md-4 col-sm-12 idc-article-width d-flex align-items-center mb-2">
-                    <img src="./assets/img/Rectangle 5-5.png" class="img-fluid" />
-                </div>
-                <div class="col-md-8 col-sm-12">
-
-                    <h2>Massa eu in laoreet enim augue vulputate nunc.</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                    eiusmod tempor incididunt ut labore et dolore magnaaliqua. Lectus
-                    quisque magna in nisl nibh bibendum ipsum, elit duis. Donec.
-                    </p>
-
-                    <div class="row justify-content-between align-items-center">
-                        <div class="col-sm-6 mb-3">
-                            <p class="author">Samatha Leuthex</p>
-                            <p class="date">May 5, 3 min read</p>
-                    
-                        </div>
-                    
-                        <div class="col-sm-6 idc-article-icons">
-                            <img src="./assets/img/Vector.png" />
-                            <img src="./assets/img/Vector-4.png" />
-                        </div>
-                    
-                    </div>
-                </div>
-            </div>
-
-            <div class="row idc-article-margin">
-                <div class="col-md-4 col-sm-12 idc-article-width  d-flex align-items-center mb-2">
-                    <img src="./assets/img/Rectangle 5-6.png" class="img-fluid" />
-                </div>
-                <div class="col-md-8 col-sm-12">
-            
-                    <h2>Feugiat a euismod arcu feugiat posuere morbi.</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magnaaliqua. Lectus
-                        quisque magna in nisl nibh bibendum ipsum, elit duis. Donec.
-                    </p>
-            
-                    <div class="row justify-content-between align-items-center">
-                        <div class="col-sm-6 mb-3">
-                            <p class="author">Samatha Leuthex</p>
-                            <p class="date">May 5, 3 min read</p>
-            
-                        </div>
-            
-                        <div class="col-sm-6 idc-article-icons">
-                            <img src="./assets/img/Vector.png" />
-                            <img src="./assets/img/Vector-4.png" />
-                        </div>
-            
-                    </div>
-                </div>
-            </div>
-
-            <div class="row idc-article-margin">
-                <div class="col-md-4 col-sm-12 idc-article-width d-flex align-items-center mb-2">
-                    <img src="./assets/img/Rectangle 5-7.png" class="img-fluid" />
-                </div>
-                <div class="col-md-8 col-sm-12">
-            
-                    <h2>Sociis purus pellentesque faucibus vitae et felis.</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magnaaliqua. Lectus
-                        quisque magna in nisl nibh bibendum ipsum, elit duis. Donec.
-                    </p>
-            
-                    <div class="row justify-content-between align-items-center">
-                        <div class="col-sm-6 mb-3">
-                            <p class="author">Samatha Leuthex</p>
-                            <p class="date">May 5, 3 min read</p>
-            
-                        </div>
-            
-                        <div class="col-sm-6 idc-article-icons">
-                            <img src="./assets/img/Vector.png" />
-                            <img src="./assets/img/Vector-4.png" />
-                        </div>
-            
-                    </div>
-                </div>
-            </div>
-
-            <div class="row idc-article-margin">
-                <div class="col-md-4 col-sm-12 idc-article-width  d-flex align-items-center mb-2">
-                    <img src="./assets/img/Rectangle 5-8.png" class="img-fluid" />
-                </div>
-                <div class="col-md-8 col-sm-12">
-            
-                    <h2>Cursus feugiat mi pellentesque mauris sed eu.</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magnaaliqua. Lectus
-                        quisque magna in nisl nibh bibendum ipsum, elit duis. Donec.
-                    </p>
-            
-                    <div class="row justify-content-between align-items-center">
-                        <div class="col-sm-6 mb-3">
-                            <p class="author">Samatha Leuthex</p>
-                            <p class="date">May 5, 3 min read</p>
-            
-                        </div>
-            
-                        <div class="col-sm-6 idc-article-icons">
-                            <img src="./assets/img/Vector.png" />
-                            <img src="./assets/img/Vector-4.png" />
-                        </div>
-            
-                    </div>
-                </div>
-            </div>
-
-            <div class="row idc-article-margin">
-                <div class="col-md-4 col-sm-12 idc-article-width d-flex align-items-center mb-2">
-                    <img src="./assets/img/Rectangle 5-9.png" class="img-fluid" />
-                </div>
-                <div class="col-md-8 col-sm-12">
-            
-                    <h2>A morbi arcu curabitur etiam fringilla augue.</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magnaaliqua. Lectus
-                        quisque magna in nisl nibh bibendum ipsum, elit duis. Donec.
-                    </p>
-            
-                    <div class="row justify-content-between align-items-center">
-                        <div class="col-sm-6 mb-3">
-                            <p class="author">Samatha Leuthex</p>
-                            <p class="date">May 5, 3 min read</p>
-            
-                        </div>
-            
-                        <div class="col-sm-6 idc-article-icons">
-                            <img src="./assets/img/Vector.png" />
-                            <img src="./assets/img/Vector-4.png" />
-                        </div>
-            
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="website-footer">
-        <div class="myContainer">
-            <div class="footer_inner d-flex justify-content-between">
-                <div class="newPost text-capitalize d-flex align-items-center position-relative">
-                    <span>new post</span>
-                </div>
-                <div class="oldPost text-capitalize d-flex align-items-center position-relative">
-                    <span>old post</span>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <script src="/assets/js/lib/jquery.min.js"></script>
     <script src="/assets/js/lib/slick.min.js"></script>
     <script src="/assets/js/scripts.min.js"></script>
+    <script src="/assets/js/fetchTopPost.min.js"></script>
+    <script src="/assets/js/fetchLatestPost.min.js"></script>
+    <script src="/assets/js/templateLatestPosts.min.js"></script>
+    <script src="/assets/js/templateTopPosts.min.js"></script>
+    <script src="/assets/js/templateFavouritePost.min.js"></script>
+    <script src="/assets/js/modalTemplate.min.js"></script>
+    <script src="/assets/js/utils.min.js"></script>
+    <script src="/assets/js/defaultValues.min.js"></script>
 
 </body>
 
